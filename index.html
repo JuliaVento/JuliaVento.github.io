@@ -1,0 +1,267 @@
+ <!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Гольф на Мальдивах</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet/less" type="text/css" href="style.less">
+  <script src="less.js" type="text/javascript"></script>
+  
+<script>
+function validateForm() {
+	var nam = document.forms["form"]["name"].value;
+	var tel = document.forms["form"]["tel"].value;
+	var mail = document.forms["form"]["email"].value;
+	var result = true;
+	
+	result = !isEmpty(nam, "nameValid", " Упс! Кажется, вы пропустили поле!" ) &&
+			 valid("nameValid") && result;
+	result = !isEmpty(mail, "emailValid", " Упс! Кажется, вы пропустили поле!" ) && 
+			 isMailValid(mail, "emailValid", "Введите правильный e-mail!") && 
+			 valid("emailValid") && result;
+	result = !isEmpty(tel, "telValid", " Упс! Кажется, вы пропустили поле!" ) && 
+			 valid("telValid") && result;
+	return result;	
+}
+
+function isMailValid(mail, id, warn) {
+	var at = "@";
+	var dot = ".";
+	if (mail.indexOf(at) == -1 || mail.indexOf(dot) == -1) {
+		document.getElementById(id).innerHTML = warn;
+		return false;
+	}
+	return true;
+}
+
+function isEmpty (val, id, warn) {
+	if (val.length == 0) {
+		document.getElementById(id).innerHTML = warn;
+		return true;
+	}
+	return false;
+}
+
+function valid (id) {
+	document.getElementById(id).innerHTML = "";
+	return true;
+}
+
+</script>
+</head>
+<body>
+
+<div class="container-fluid">
+
+  <div class="page-header"><h1>Гольф на Мальдивах</h1></div>
+<div class="container">
+  <h2>Игра, которая завораживает</h2>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Немного истории</a></li>
+    <li><a data-toggle="tab" href="#rules">Правила игры</a></li>
+    <li><a data-toggle="tab" href="#turnirs">Турниры</a></li>
+    <li><a data-toggle="tab" href="#minigolf">Мини-гольф</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3>Немного истории</h3>
+      <p>Считается, что игра в гольф зародилась в Шотландии и была изобретена пастухами, 
+	  которые с помощью посохов (будущих клюшек) загоняли камни в кроличьи норы. 
+	  Предположительно игра существовала уже в XIV веке, а в XV веке в Шотландии 
+	  ышло несколько законов, запрещавших играть в «гоуф». В XVII веке клюшками в 
+	  мяч играли уже в Нидерландах. Игра в её современном виде оформилась в XIX веке в Шотландии.
+	  </p> </div>
+    <div id="rules" class="tab-pane fade">
+      <h3>Правила игры</h3>
+      <p>
+	  В каждой игре участник должен пройти определённое число лунок (как правило, 18) 
+	  в определённом порядке. Лункой в данном случае называются и само отверстие в земле, 
+	  и вся площадка для игры. Площадка для игры, как правило, состоит из:<br>
+    - стартовой зоны — площадки «ти» («Тэ», «Т-образная подставка»);<br>
+    - основной зоны (англ. fairway, «прямое направление»; ср. фарватер);<br>
+    - специальной площадки с вырезанной в ней лункой — «лужайки» (green).<br>
+
+На площадке для игры могут присутствовать различные препятствия — водные преграды, 
+бункеры с песком, кусты, деревья, высокая трава.
+	  </p></div>
+    <div id="turnirs" class="tab-pane fade">
+      <h3>Турниры</h3>
+      <p>
+	  К числу важнейших мужских профессиональных турниров относятся: 
+	  Мастерс, Открытый чемпионат США (US Open), 
+	  Открытый чемпионат Британии (The Open Championship), 
+	  и чемпионат профессиональной ассоциации гольфистов (PGA Championship).
+
+9 октября 2009 года на 121 сессии МОК в Копенгагене 63 голосами против 27
+ было решено включить гольф в программу Олимпийских игр 2016 в Рио-де-Жанейро.
+	  </p>
+    </div>
+    <div id="minigolf" class="tab-pane fade">
+      <h3>Мини-гольф</h3>
+      <p>
+	  Миниатюрный гольф или мини-гольф — игра, получившая развитие с середины XIX века. 
+	  Площадка для мини-гольфа представляет собой грин, на котором путь мяча к лунке затруднен
+	  многочисленными препятствиями в виде камней, песчаных ловушек, искусственных лабиринтов
+	  и так далее. Задача игрока — как и в обычном гольфе провести мяч в лунку за минимальное 
+	  число ударов. Игра ведется только клюшкой «паттер», свинг запрещен правилами.
+
+
+	  </p>
+    </div>
+  </div>
+</div>
+
+	  <div class="row">
+		<div class="col-sm-4 block">
+		 <p><strong>В гольфе...</strong></p>
+		<img class="img-responsive" src="Golf.jpg" alt="Chania" width="448" height="299"> 
+		</div>
+		<div class="col-sm-4 block">
+			<p class="bg-primary">Важно всегда быть в форме.</p>
+			<p class="bg-success">Спокойствие позволит вам добиться успеха.</p>
+			<p class="bg-info">Гольф - это игра длиною в жизнь.</p>
+			<p class="bg-warning">Будьте осторожны! Гольф затягивает! </p>
+			<p class="bg-danger">Никогда не играйте в гольф хоккейной клюшкой!</p>
+			
+		</div>
+		<div class="col-sm-4 block">
+		<p><strong>Иногда говорят, что...</strong></p>
+		  <p class="text-muted">Гольф придумали оригиналы, которым больше нечего было делать.</p>
+		  <p class="text-primary">В гольф играют те, кому некуда девать свое время.</p>
+		  <p class="text-success">Ты не добьешься успеха, если будешь день за днем размахивать клюшкой.</p>
+		  <p class="text-info">Вместо игры в гольф можно вспахать не одно поле</p>
+		  <p class="text-warning">Если чересчур стараться, можно кого-нибудь клюшкой ударить.</p>
+		  <p class="text-danger">Гольф увлечение дорогое, и не всем оно по карману.</p>
+		  <p><strong>Но вы им не верьте. Ведь гольф - это призвание. Ваше призвание.</strong></p>
+	 </div>
+	 </div>
+</div>
+
+
+  <h2>Участники остались довольны!</h2>
+  <div class="container block" >
+	<div class="row">
+	  <div class="col-sm-4">
+	  <img src="Clubs.jpg" class="img-thumbnail img-responsive" alt="Cinque Terre" width="424" height="473"> 
+	  </div>
+	  <div class="col-sm-8">
+	  <h2>Наши клиенты, которые играли и выиграли поездку на Мальдивы</h2>
+           
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+  <a href="#name" class="btn btn-info btn-lg" role="button">Участвовать в акции!</a>
+	  </div>
+	</div>
+</div>
+
+
+  <div class="jumbotron container">
+   <h3>Запишись - и ты попадешь на Мальдивы, где в гольф играют профессионалы!</h3>
+  <form name="form" class="form-horizontal" role="form" action="#.php" method="post" onsubmit="return validateForm()">
+   
+	
+	<div class="form-group">
+      <label class="control-label col-sm-3" for="name">Имя:</label>
+      <div class="col-xs-8">          
+        <input type="text" class="form-control" id="name" name="name" placeholder="Введите свое имя!">
+      <p id="nameValid"></p>
+	  </div>
+    
+      <label class="control-label col-sm-3" for="email">Email:</label>
+      <div class="col-xs-8">
+        <input type="text" class="form-control" id="email" name="email" placeholder="Введите email">
+		<p id="emailValid"></p>
+      </div>
+   
+   <label class="control-label col-sm-3" for="tel">Телефон:</label>
+      <div class="col-xs-8">
+        <input type="text" class="form-control" id="tel" name="tel" placeholder="Введите ваш номер телефона">
+		<p  id="telValid"></p>
+      </div>
+   
+	
+      <label for="comment" class="control-label col-sm-3">Комментарий: </label>
+      <textarea class="form-control col-xs-8" rows="5" id="comment" name="comment"></textarea>
+    
+        
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+          <label><input type="checkbox"> Запомнить меня!</label>
+     </div>
+      </div>
+    </div>
+       
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Отправить!</button>
+      </div>
+ </div>
+
+  </form>
+
+   </div>
+    
+
+
+
+  
+  <nav class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Гольф на Мальдивах</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Главная</a></li>
+        <li class="dropdown">
+          <a data-toggle="dropdown" href="#">Мир гольфа </a>
+     
+        </li>
+        <li><a href="#">О нас говорят</a></li>
+        <li><a href="#">Мастера</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="copyright">@2015, Julia Vento</div>
+
+</body>
+</html>

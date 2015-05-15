@@ -1,0 +1,83 @@
+/* Переменные */
+@body-bg-color: #58B6FF;   
+@text-color: black;          
+@button-bg-color: #f9627d; 
+@menu-bg-color: #222222;
+@block-height: 350px;
+@body_back_img: url(shangri-la-golf.jpg);
+@box-color: rgba(255, 255, 255, 0.81);
+@margin: 1rem;
+@padding: 1rem;
+
+/* LESS CSS */
+body {
+  background-color: @box-color;
+  color: @text-color;
+  font-family: sans-serif;
+  text-align: center;
+  background: @body_back_img no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.container {
+  margin-bottom: @margin * 2;
+}
+
+.page-header,
+.tab-content,
+h2 {
+ background-color: @box-color;
+ padding: @padding;
+}
+
+div, h2 {
+  .border-top-radius(5px);
+}
+
+h3 {
+  padding: @padding * 3;
+}
+
+.border-top-radius(@radius) {
+  border-top-right-radius: @radius;
+  border-top-left-radius: @radius;
+}
+
+.block {
+  min-height:@block-height;
+  background-color: @box-color;
+  padding: @padding;
+}
+
+.nav.nav-tabs {
+  background-color: @menu-bg-color;
+	a{
+	  color: white;
+	}
+}
+
+#comment{
+  background-color:@menu-bg-color;
+  width: 50%;
+}
+
+
+.btn {
+  margin: @margin;
+}
+
+.copyright {
+  margin-bottom: 60px;
+}
+
+.jumbotron.container {
+  margin-top: 20px;
+  background-color: #2374B2;
+  color: white;
+}
+
+
+
+
+
